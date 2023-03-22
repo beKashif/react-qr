@@ -1,0 +1,65 @@
+.appbody {
+    background: rgb(125, 226, 211);
+    background: linear-gradient(7deg, rgba(125, 226, 211, 1) 0%, rgba(226, 117, 194, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .qr-container {
+    background-color: rgba(255, 255, 255, 0.329);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26);
+    padding: 20px;
+  }
+  
+  .react {
+    color: #007bff;
+  }
+  
+  h1{
+    font-size: 3rem;
+  }
+  
+  .qr-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .qr-input {
+    padding: 10px;
+    border: 1px solid #00000069;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 300px;
+    background-color: #ffffff00;
+  }
+  
+  .qr-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .qr-code {
+    /* margin-top: 20px; */
+    border: 1px solid #00000069;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
