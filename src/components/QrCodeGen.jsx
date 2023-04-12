@@ -82,13 +82,7 @@ const handleDownloadQRCode = (event) => {
                   Download as PNG
                 </button>
 
-<button
-                  type='button'
-                  className='qr-btn'
-                  onClick={handleSvgDownloadQRCode}
-                >
-                  Download as SVG
-                </button>
+
               </>
             )}
           </form>
