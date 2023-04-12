@@ -57,7 +57,6 @@ const handleDownloadQRCode = (event) => {
 
             {qrCodeVisible && data && (
               <>
-//                 <QRCode value={data} className='qr-code' ref={qrCodeRef} />
               <QRCode value={data} className="qr-code" id="qrcode-canvas" />
 
                 <button
