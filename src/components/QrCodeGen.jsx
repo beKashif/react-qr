@@ -30,20 +30,6 @@ const handleDownloadQRCode = (event) => {
   document.body.removeChild(downloadLink);
 };
   
-  const handleSvgDownloadQRCode = (event) => {
-  event.preventDefault();
-  const svgString = ReactDOMServer.renderToString(<QRCode value={data} />);
-  const blob = new Blob([svgString]);
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "qrcode.svg";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
-};
-
 
 
   return (
