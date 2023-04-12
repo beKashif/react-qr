@@ -25,7 +25,7 @@ const QrCodeGen = () => {
         const blob = new Blob([svgString], {type: 'image/svg+xml'});
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
-        link.download = 'qrcode.svg';
+        link.download = 'qrcode.png';
         link.href = url;
         document.body.appendChild(link);
         link.click();
@@ -62,7 +62,7 @@ const QrCodeGen = () => {
                     className='qr-download-btn'
                     onClick={handleDownloadQRCode}
                     >
-                        Download SVG
+                        Download
                     </button>
                 }
             </form>
