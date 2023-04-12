@@ -33,7 +33,7 @@ const handleDownloadQRCode = (event) => {
   const handleSvgDownloadQRCode = (event) => {
   event.preventDefault();
   const svgString = ReactDOMServer.renderToString(<QRCode value={data} />);
-  const blob = new Blob([svgString], {type: "image/svg+xml"});
+  const blob = new Blob([svgString]);
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
