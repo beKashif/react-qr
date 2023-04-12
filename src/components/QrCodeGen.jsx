@@ -18,28 +18,18 @@ const QrCodeGen = () => {
     setQrCodeVisible(true);
   };
 
-  const handleDownloadQRCode = (event) => {
-    event.preventDefault();
-    const svgString = ReactDOMServer.renderToStaticMarkup(qrCodeRef.current);
-    const canvas = document.createElement('canvas');
-    const svg = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
-    const url = URL.createObjectURL(svg);
-    const image = new Image();
-    image.onload = () => {
-      canvas.width = image.width;
-      canvas.height = image.height;
-      const context = canvas.getContext('2d');
-      context.drawImage(image, 0, 0);
-      const png = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.download = 'qrcode.png';
-      link.href = png;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    };
-    image.src = url;
-  };
+const handleDownloadQRCode = (event) => {
+  event.preventDefault();
+  const canvas = document.getElementById("qrcode-canvas");
+  const pngUrl = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  const downloadLink = document.createElement("a");
+  downloadLink.href = pngUrl;
+  downloadLink.download = "qrcode.png";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+};
+
 
   return (
     <>
@@ -67,7 +57,9 @@ const QrCodeGen = () => {
 
             {qrCodeVisible && data && (
               <>
-                <QRCode value={data} className='qr-code' ref={qrCodeRef} />
+//                 <QRCode value={data} className='qr-code' ref={qrCodeRef} />
+              <QRCode value={data} className="qr-code" id="qrcode-canvas" />
+
                 <button
                   type='button'
                   className='qr-download-btn'
